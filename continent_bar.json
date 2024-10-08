@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Percentage of Arrivals by Continent for Each State in Malaysia (2020-2023)",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/updated_continent_percentage_arrivals_2020_2023.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "ContinentSelection",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Africa", "Antarctica", "Asia", "Europe", "North America", "Oceania", "South America"],
+        "name": "Select Continent: "
+      }
+    },
+    {
+      "name": "YearSelection",
+      "value": 2020,
+      "bind": {
+        "input": "range",
+        "min": 2020,
+        "max": 2023,
+        "step": 1,
+        "name": "Year Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "ContinentSelection === 'All' || datum.continent === ContinentSelection"
+    },
+    {
+      "filter": "datum.year == YearSelection"  // Compare year as numeric
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "soe",
+      "type": "nominal",
+      "title": "State",
+      "axis": {
+        "labelAngle": 45,
+        "labelFontSize": 10
+      },
+      "sort": "-y"
+    },
+    "y": {
+      "field": "percentage_arrivals",
+      "type": "quantitative",
+      "title": "Percentage of Arrivals",
+      "stack": "normalize"
+    },
+    "color": {
+      "field": "continent",
+      "type": "nominal",
+      "title": "Continent of Arrival",
+      "scale": {
+        "domain": ["Africa", "Antarctica", "Asia", "Europe", "North America", "Oceania", "South America"],
+        "range": [
+          "#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33", "#a65628"
+        ]
+      },
+      "legend": {
+        "title": "Continent of Arrival",
+        "labelFontSize": 12,
+        "titleFontSize": 10,
+        "titleFontWeight": "bold"
+      }
+    },
+    "tooltip": [
+      {"field": "soe", "type": "nominal", "title": "State"},
+      {"field": "continent", "type": "nominal", "title": "Continent"},
+      {"field": "percentage_arrivals", "type": "quantitative", "title": "Percentage of Arrivals"}
+    ]
+  }
+}
