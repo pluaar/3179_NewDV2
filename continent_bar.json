@@ -34,7 +34,7 @@
       "filter": "ContinentSelection === 'All' || datum.continent === ContinentSelection"
     },
     {
-      "filter": "datum.year == YearSelection"  // Compare year as numeric
+      "filter": "datum.year == YearSelection" 
     }
   ],
   "mark": "bar",
