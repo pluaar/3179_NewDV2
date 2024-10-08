@@ -4,7 +4,7 @@ vegaEmbed("#map_plot", choropleth1).then(function(result) {
 }).catch(console.error);
 
 var continent2 = "continent_bar.json";
-vegaEmbed("continent_plot_2", continent2).then(function(result) {
+vegaEmbed("#continent_plot_2", continent2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
