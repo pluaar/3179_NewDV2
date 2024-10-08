@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Population pyramid-like visualization of male and female arrivals by state from 2020 to 2023 in Malaysia",
+  "data": {
+    "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/updated_arrivals_percent.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.date == yearSelector"
+    },
+    {
+      "fold": ["percent_male_arrivals", "percent_female_arrivals"],
+      "as": ["GenderField", "Percentage"]
+    },
+    {
+      "calculate": "datum.GenderField == 'percent_male_arrivals' ? 'Male' : 'Female'",
+      "as": "Gender"
+    },
+    {
+      "calculate": "datum.Gender == 'Male' ? -datum.Percentage : datum.Percentage",
+      "as": "signed_people"
+    }
+  ],
+  "params": [
+    {
+      "name": "yearSelector",
+      "value": 2020,
+      "bind": {
+        "input": "range",
+        "min": 2020,
+        "max": 2023,
+        "step": 1,
+        "name": "Year Selection"
+      }
+    }
+  ],
+  "width": 500,
+  "height": 400,
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "soe",
+      "type": "nominal",
+      "title": "State",
+      "axis": { "labelAngle": 0 }
+    },
+    "x": {
+      "field": "signed_people",
+      "type": "quantitative",
+      "title": "Percentage of Arrivals",
+      "scale": { "domain": [-100, 100] },
+      "axis": {
+        "title": "Male Population (% left) | Female Population (% right)"
+      }
+    },
+    "color": {
+      "field": "Gender",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Male", "Female"],
+        "range": ["#1f77b4", "#e377c2"]
+      },
+      "legend": {
+        "title": "Gender",
+        "orient": "top"
+      }
+    },
+    "tooltip": [
+      { "field": "soe", "type": "nominal", "title": "State" },
+      { "field": "Gender", "type": "nominal", "title": "Gender" },
+      {
+        "field": "Percentage",
+        "type": "quantitative",
+        "title": "Percentage of Arrivals",
+        "format": ".2f"
+      }
+    ]
+  },
+  "config": {
+    "view": { "stroke": "transparent" },
+    "axis": { "grid": false }
+  }
+}
