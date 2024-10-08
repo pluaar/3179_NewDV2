@@ -1,0 +1,92 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Arrivals by State in Malaysia (2020-2023)",
+  "width": 500,
+  "height": 300,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "params": [
+    {
+      "name": "YearSelection",
+      "value": 2020,
+      "bind": {
+        "input": "range",
+        "min": 2020,
+        "max": 2023,
+        "step": 1,
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "GenderSelection",
+      "value": "Total_Arrivals",
+      "bind": {
+        "input": "select",
+        "options": ["Total_Arrivals", "Total_Male_Arrivals", "Total_Female_Arrivals"],
+        "labels": ["Total Arrivals", "Male Arrivals", "Female Arrivals"],
+        "name": "Gender: "
+      }
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/processed_arrivals_2020_to_2023.csv"
+  },
+  "transform": [
+    {
+      "lookup": "State",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/ne_10m_admin_1_states_provinces.json",
+          "format": {
+            "type": "topojson",
+            "feature": "ne_10m_admin_1_states_provinces"
+          }
+        },
+        "key": "properties.name"
+      },
+      "as": "geo"
+    },
+    {
+      "filter": "datum.Year == YearSelection"
+    },
+    {
+      "calculate": "datum[GenderSelection] / 1000",
+      "as": "Arrivals_in_Thousands"
+    },
+    {
+      "calculate": "'Total ' + (GenderSelection === 'Total_Arrivals' ? 'Arrivals' : (GenderSelection === 'Total_Male_Arrivals' ? 'Male Arrivals' : 'Female Arrivals')) + ' (in Thousands): ' + datum[GenderSelection] / 1000",
+      "as": "Arrivals_Detail"
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "black",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "shape": {
+      "field": "geo",
+      "type": "geojson"
+    },
+    "color": {
+      "field": "Arrivals_in_Thousands",
+      "type": "quantitative",
+      "scale": {
+        "scheme": {
+          "signal": "GenderSelection === 'Total_Male_Arrivals' ? 'greens' : GenderSelection === 'Total_Female_Arrivals' ? 'reds' : 'blues'"
+        }
+      },
+      "legend": {
+        "title": "Arrivals (in Thousands)",
+        "labelFontSize": 12,
+        "titleFontSize": 10,
+        "titleFontWeight": "bold"
+      }
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal", "title": "State"},
+      {"field": "Arrivals_Detail", "type": "nominal"}
+    ]
+  }
+}
