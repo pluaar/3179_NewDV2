@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Heatmap of Monthly Arrivals for Each State in 2023",
+  "data": {
+    "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/cleaned_total_monthly_arrivals_2023.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "datum.Total_Arrivals / 1000",
+      "as": "Total_Arrivals_Thousands"
+    },
+    {
+      "calculate": "parseInt(datum.Month)",
+      "as": "MonthNumeric"
+    }
+  ],
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "MonthNumeric",
+      "type": "ordinal",
+      "title": "Month",
+      "sort": "ascending"
+    },
+    "y": {
+      "field": "State",
+      "type": "nominal",
+      "title": "State"
+    },
+    "color": {
+      "field": "Total_Arrivals_Thousands",
+      "type": "quantitative",
+      "title": "Total Arrivals (in Thousands)",
+      "bin": {
+        "maxbins": 10
+      },
+      "scale": {
+        "scheme": "blues"
+      },
+      "legend": {
+        "title": "Arrivals (Thousands)",
+        "format": ",.1f"
+      }
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal"},
+      {"field": "MonthNumeric", "type": "ordinal", "title": "Month"},
+      {"field": "Total_Arrivals_Thousands", "type": "quantitative", "title": "Total Arrivals (in Thousands)"}
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    }
+  }
+}
