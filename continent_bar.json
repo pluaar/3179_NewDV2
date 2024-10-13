@@ -4,7 +4,7 @@
   "width": 600,
   "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/updated_continent_percentage_arrivals_2020_2023.csv",
+    "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/continent_percentage_arrivals_2020_2023%20(2).csv",
     "format": {"type": "csv"}
   },
   "params": [
@@ -13,7 +13,16 @@
       "value": "All",
       "bind": {
         "input": "select",
-        "options": ["All", "Africa", "Antarctica", "Asia", "Europe", "North America", "Oceania", "South America"],
+        "options": [
+          "All",
+          "Africa",
+          "Antarctica",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
         "name": "Select Continent: "
       }
     },
@@ -33,9 +42,7 @@
     {
       "filter": "ContinentSelection === 'All' || datum.continent === ContinentSelection"
     },
-    {
-      "filter": "datum.year == YearSelection" 
-    }
+    {"filter": "datum.year == YearSelection"}
   ],
   "mark": "bar",
   "encoding": {
@@ -43,10 +50,7 @@
       "field": "soe",
       "type": "nominal",
       "title": "State",
-      "axis": {
-        "labelAngle": 45,
-        "labelFontSize": 10
-      },
+      "axis": {"labelAngle": 45, "labelFontSize": 10},
       "sort": "-y"
     },
     "y": {
@@ -60,9 +64,23 @@
       "type": "nominal",
       "title": "Continent of Arrival",
       "scale": {
-        "domain": ["Africa", "Antarctica", "Asia", "Europe", "North America", "Oceania", "South America"],
+        "domain": [
+          "Africa",
+          "Antarctica",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
         "range": [
-          "#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33", "#a65628"
+          "#E41A1C",
+          "#377EB8",
+          "#4DAF4A",
+          "#984EA3",
+          "#FF7F00",
+          "#FFFF33",
+          "#F781BF"
         ]
       },
       "legend": {
@@ -75,7 +93,11 @@
     "tooltip": [
       {"field": "soe", "type": "nominal", "title": "State"},
       {"field": "continent", "type": "nominal", "title": "Continent"},
-      {"field": "percentage_arrivals", "type": "quantitative", "title": "Percentage of Arrivals"}
+      {
+        "field": "percentage_arrivals",
+        "type": "quantitative",
+        "title": "Percentage of Arrivals"
+      }
     ]
   }
 }
