@@ -55,7 +55,7 @@
       "as": "Arrivals_in_Thousands"
     },
     {
-      "calculate": "'Total ' + (GenderSelection === 'Total_Arrivals' ? 'Arrivals' : (GenderSelection === 'Total_Male_Arrivals' ? 'Male Arrivals' : 'Female Arrivals')) + ' (in Thousands): ' + datum[GenderSelection] / 1000",
+      "calculate": "'Total ' + (GenderSelection === 'Total_Arrivals' ? 'Arrivals' : (GenderSelection === 'Total_Male_Arrivals' ? 'Male Arrivals' : 'Female Arrivals')) + ' (in Thousands): ' + format(datum[GenderSelection] / 1000, '.2f')",
       "as": "Arrivals_Detail"
     }
   ],
@@ -86,7 +86,7 @@
     },
     "tooltip": [
       {"field": "State", "type": "nominal", "title": "State"},
-      {"field": "Arrivals_Detail", "type": "nominal"}
+      {"field": "Arrivals_Detail", "type": "nominal", "title": "Detail"}
     ]
   }
 }
