@@ -96,7 +96,8 @@
       {
         "field": "percentage_arrivals",
         "type": "quantitative",
-        "title": "Percentage of Arrivals"
+        "title": "Percentage of Arrivals",
+        "format": ".2f"
       }
     ]
   }
