@@ -22,6 +22,7 @@ body, html {
     border-bottom: 2px solid black; /* Adds a bottom border */
     padding-bottom: 10px;
     width: 100%; /* Ensures the header spans the full width */
+    background-color: #f0f0f0; /* Light grey background */
 }
 
 .plot {
@@ -31,13 +32,15 @@ body, html {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */              
+    justify-content: center;     
+    text-align: center;
 }
 
-.plot.vega-embed > div {
-    margin: auto; /* Centers non-flex children within flex containers */
-    width: 100%; /* Ensures visualization uses full width of its container */
+.controls {
+    width: 100%; /* Full width */
+    text-align: center; /* Center the controls */
+    padding-top: 10px; /* Space above the controls */
 }
 
 .vega-embed canvas,

@@ -22,18 +22,30 @@
       "as": "MonthNumeric"
     }
   ],
-  "mark": "rect",
+  "mark": {
+    "type": "rect",
+    "stroke": "dimgrey", 
+    "strokeWidth": 0.5 
+  },
   "encoding": {
     "x": {
       "field": "MonthNumeric",
       "type": "ordinal",
       "title": "Month",
-      "sort": "ascending"
+      "sort": "ascending",
+      "axis": {
+        "titleFontSize": 16,
+        "labelFontSize": 15
+      }
     },
     "y": {
       "field": "soe",
       "type": "nominal",
-      "title": "State of Entry"
+      "title": "State of Entry",
+      "axis": {
+        "titleFontSize": 16,
+        "labelFontSize": 15
+      }
     },
     "color": {
       "field": "Arrivals_in_Thousands",
@@ -47,7 +59,9 @@
       },
       "legend": {
         "title": "Arrivals (Thousands)",
-        "format": ",.1f"
+        "format": ",.1f",
+        "titleFontSize": 14,
+        "labelFontSize": 12
       }
     },
     "tooltip": [
