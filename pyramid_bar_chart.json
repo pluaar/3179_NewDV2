@@ -1,12 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Percentage of Arrivals by Gender for Each State in Malaysia (2020-2023)",
-    "fontSize": 20,  
-    "anchor": "middle",  
-    "color": "black",  
-    "font": "Arial"  
-  },
   "description": "Population pyramid-like visualization of male and female arrivals by state from 2020 to 2023 in Malaysia",
   "data": {
     "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/updated_arrivals_percent.csv",

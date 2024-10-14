@@ -4,6 +4,7 @@ body, html {
     width: 100%;
     overflow-x: hidden; /* Prevents horizontal scroll */
     font-family: Arial, sans-serif; /* Ensures consistent font usage */
+    background-color: rgb(223, 222, 222);
 }
 
 .container {
@@ -25,22 +26,33 @@ body, html {
     background-color: #f0f0f0; /* Light grey background */
 }
 
-.plot {
+.plot-container {
     width: 80%; /* Adjusts width to provide a more centered look */
     margin: 20px auto; /* Auto margins for horizontal centering */
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content vertically */              
-    justify-content: center;     
-    text-align: center;
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center content horizontally */
+    background-color: white
 }
 
-.controls {
-    width: 100%; /* Full width */
-    text-align: center; /* Center the controls */
-    padding-top: 10px; /* Space above the controls */
+.plot-container-content {
+    margin-top: 10px; /* Space between the plot and content */
+}
+
+.heatmap-container {
+    width: 81.7%; /* Matches the width of other plots for consistency */
+    margin: auto; /* Ensures centering */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjusts spacing around heatmaps */
+}
+
+.heatmap-container .plot-container {
+    width: 48%; /* Two heatmaps side by side */
+    margin-bottom: 20px;
 }
 
 .vega-embed canvas,
@@ -49,15 +61,8 @@ body, html {
     margin: auto; /* Center block elements horizontally */
 }
 
-.heatmap-container {
-    width: 80%; /* Matches the width of other plots for consistency */
-    margin: auto; /* Ensures centering */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Adjusts spacing around heatmaps */
-}
-
-.heatmap-container .plot {
-    width: 48%; /* Two heatmaps side by side */
-    margin-bottom: 20px;
+.controls {
+    width: 100%; /* Full width */
+    text-align: center; /* Center the controls */
+    padding-top: 10px; /* Space above the controls */
 }

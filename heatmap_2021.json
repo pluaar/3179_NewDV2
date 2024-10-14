@@ -1,12 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Monthly Arrivals for Each State in Year 2021",
-    "fontSize": 20,  
-    "anchor": "middle",  
-    "color": "black",  
-    "font": "Arial"  
-  },
   "description": "Heatmap of Monthly Arrivals for Each State in 2021",
   "data": {
     "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/monthly_arrivals_2021.csv",

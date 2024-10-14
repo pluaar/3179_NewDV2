@@ -1,12 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Percentage of Arrivals by Continent for Each State in Malaysia (2020-2023)",
-    "fontSize": 20,  
-    "anchor": "middle",  
-    "color": "black",  
-    "font": "Arial"  
-  },
   "width": 600,
   "height": 400,
   "data": {
@@ -89,9 +82,9 @@
         ],
         "range": [
           "#E41A1C",
-          "#4DAF4A",
-          "#377EB8",
           "#984EA3",
+          "#377EB8",
+          "#4DAF4A",
           "#FF7F00",
           "#FFFF33",
           "#F781BF"

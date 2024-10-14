@@ -8,7 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-
     <script src="vega_lite_vjs.js"></script>
 
     <link rel="stylesheet" href="styles.css">
@@ -18,27 +17,57 @@
         <header class="header">
             <h1>Malaysia's International Arrivals For Every State</h1>
         </header>
-        <div class="plot" id="map_plot">
-            <h2>Map Visualization of Arrivals</h2>
+        <div class="plot-container">
+            <h2>Total Arrivals by State in Malaysia (2020-2023)</h2>
+            <div id="map_plot"></div>
+            <div class="plot-container-content">
+                <p>This map visualizes the total number of international arrivals in Malaysia from 2020 to 2023, 
+                <br>across different states. Areas with darker shades indicate higher arrivals.<br> 
+                <b>Selangor and Kuala Lumpur are consistently the busiest entry points.</b></p>
+            </div>
         </div>
-        <div class="plot" id="pyramidbar_plot_3">
-            <h2>Pyramid Bar Chart of Arrivals</h2>
+        <div class="plot-container">
+            <h2>Percentage of Arrivals by Gender for Each State in Malaysia (2020-2023)</h2>
+            <div id="pyramidbar_plot_3"></div>
+            <div class="plot-container-content">
+                <p>This pyramid bar chart represents the gender distribution of arrivals by state, highlighting differences in male and female visitor numbers. <b>States like Johor and Penang show a balanced gender ratio among visitors.</b></p>
+            </div>
         </div>
-        <div class="plot" id="continent_plot_2">
-            <h2>Stacked Bar Chart of Arrivals</h2>
+        <div class="plot-container">
+            <h2>Percentage of Arrivals by Continent for Each State in Malaysia (2020-2023)</h2>
+            <div id="continent_plot_2"></div>
+            <div class="plot-container-content">
+                <p>This stacked bar chart shows the percentage of arrivals by continent for each state, allowing for a comparison of geographic sources of visitors. <b>Asia dominates in terms of visitor numbers across all states.</b></p>
+            </div>
         </div>
         <div class="heatmap-container">
-            <div class="plot" id="heatmap_plot_2023">
-                <h2>Heatmap of 2023</h2>
+            <div class="plot-container">
+                <h2>Monthly Arrivals for Each State in Year 2023</h2>
+                <div id="heatmap_plot_2023"></div>
+                <div class="plot-container-content">
+                    <p>Heatmap depicting monthly arrivals in 2023, with color intensity reflecting the volume of arrivals. <b>December and January typically see peak arrivals due to holiday seasons.</b></p>
+                </div>
             </div>
-            <div class="plot" id="heatmap_plot_2022">
-                <h2>Heatmap of 2022</h2>
+            <div class="plot-container">
+                <h2>Monthly Arrivals for Each State in Year 2022</h2>
+                <div id="heatmap_plot_2022"></div>
+                <div class="plot-container-content">
+                    <p>Heatmap of monthly arrivals in 2022. <b>Notice the significant increase during the mid-year festival seasons.</b></p>
+                </div>
             </div>
-            <div class="plot" id="heatmap_plot_2021">
-                <h2>Heatmap of 2021</h2>
+            <div class="plot-container">
+                <h2>Monthly Arrivals for Each State in Year 2021</h2>
+                <div id="heatmap_plot_2021"></div>
+                <div class="plot-container-content">
+                    <p>2021's arrivals heatmap shows trends amidst global travel restrictions. <b>The recovery phase in travel can be observed in the later months.</b></p>
+                </div>
             </div>
-            <div class="plot" id="heatmap_plot_2020">
-                <h2>Heatmap of 2020</h2>
+            <div class="plot-container">
+                <h2>Monthly Arrivals for Each State in Year 2020</h2>
+                <div id="heatmap_plot_2020"></div>
+                <div class="plot-container-content">
+                    <p>Early 2020 saw normal travel patterns before the onset of global travel restrictions. <b>Substantial drops are visible as restrictions were implemented.</b></p>
+                </div>
             </div>
         </div>
     </div>
