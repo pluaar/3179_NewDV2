@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600,
+  "width": 700,
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/continent_percentage_arrivals_2020_2023%20(2).csv",

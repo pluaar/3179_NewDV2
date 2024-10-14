@@ -18,7 +18,7 @@ body, html {
 .header {
     text-align: center;
     margin: 20px 0;
-    font-size: 32px; /* Increases the size of the title */
+    font-size: 34px; /* Increases the size of the title */
     font-family: 'Times New Roman', serif;
     border-bottom: 2px solid black; /* Adds a bottom border */
     padding-bottom: 10px;
@@ -27,7 +27,7 @@ body, html {
 }
 
 .plot-container {
-    width: 80%; /* Adjusts width to provide a more centered look */
+    width: 70%; /* Adjusts width to provide a more centered look */
     margin: 20px auto; /* Auto margins for horizontal centering */
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -43,11 +43,11 @@ body, html {
 }
 
 .heatmap-container {
-    width: 81.7%; /* Matches the width of other plots for consistency */
+    width: 71.5%; /* Matches the width of other plots for consistency */
     margin: auto; /* Ensures centering */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Adjusts spacing around heatmaps */
+    justify-content: space-evenly /* Adjusts spacing around heatmaps */
 }
 
 .heatmap-container .plot-container {
