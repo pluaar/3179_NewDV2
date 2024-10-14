@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     width: 100%;
     overflow-x: hidden; /* Prevents horizontal scroll */
-    font-family: Arial, sans-serif; /* Ensures consistent font usage */
+    /*font-family: Arial, sans-serif; /* Ensures consistent font usage */
     background-color: rgb(223, 222, 222);
 }
 
@@ -19,7 +19,7 @@ body, html {
     text-align: center;
     margin: 20px 0;
     font-size: 27px; /* Increases the size of the title */
-    font-family: 'Times New Roman', serif;
+    /*font-family: 'Times New Roman', serif;*/
     border-bottom: 2px solid black; /* Adds a bottom border */
     padding-bottom: 10px;
     width: 100%; /* Ensures the header spans the full width */
@@ -42,6 +42,7 @@ body, html {
 
 .plot-container-content {
     margin-top: 10px; /* Space between the plot and content */
+    font-size: 20px;
 }
 
 .heatmap-container {
