@@ -5,30 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>International Arrivals to Malaysia (2020-2023) by Gender, Continent, and State</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
     <script src="vega_lite_vjs.js"></script>
 
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
     <div class="container">
-        <div class="plot">
-            <h1>Total Arrivals For Each States of Malaysia</h1>
-            <div id="map_plot"></div>
+        <header class="header">
+            <h1>International Arrivals Visualization Dashboard</h1>
+        </header>
+        <div class="plot" id="map_plot">
+            <h2>Map Visualization of Arrivals</h2>
         </div>
-        <div class="plot">
-            <h1>Arrivals of Each Continent For Each States of Malaysia In Percentage</h1>
-            <div id="continent_plot_2"></div>
+        <div class="plot" id="pyramidbar_plot_3">
+            <h2>Pyramid Bar Chart of Arrivals</h2>
         </div>
-        <div class="plot">
-            <h1>Total Male and Female Arrivals For Each States of Malaysia In Percentage</h1>
-            <div id="pyramidbar_plot_3"></div>
+        <div class="plot" id="continent_plot_2">
+            <h2>Stacked Bar Chart of Arrivals</h2>
+        </div>
+        <div class="heatmap-container">
+            <div class="plot" id="heatmap_plot_2023">
+                <h2>Heatmap of 2023</h2>
+            </div>
+            <div class="plot" id="heatmap_plot_2022">
+                <h2>Heatmap of 2022</h2>
+            </div>
+            <div class="plot" id="heatmap_plot_2021">
+                <h2>Heatmap of 2021</h2>
+            </div>
+            <div class="plot" id="heatmap_plot_2020">
+                <h2>Heatmap of 2020</h2>
+            </div>
         </div>
     </div>
-    <!-- End of body content -->
 </body>
 </html>

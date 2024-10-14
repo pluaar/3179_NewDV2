@@ -1,5 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Percentage of Arrivals by Gender for Each State in Malaysia (2020-2023)",
+    "fontSize": 20,  
+    "anchor": "middle",  
+    "color": "black",  
+    "font": "Arial"  
+  },
   "description": "Population pyramid-like visualization of male and female arrivals by state from 2020 to 2023 in Malaysia",
   "data": {
     "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/updated_arrivals_percent.csv",
@@ -37,7 +44,7 @@
       }
     }
   ],
-  "width": 500,
+  "width": 600,
   "height": 400,
   "mark": "bar",
   "encoding": {
@@ -45,7 +52,11 @@
       "field": "soe",
       "type": "nominal",
       "title": "State",
-      "axis": { "labelAngle": 0 }
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 14,
+        "titleFontSize": 18  
+      }
     },
     "x": {
       "field": "signed_people",
@@ -53,7 +64,9 @@
       "title": "Percentage of Arrivals",
       "scale": { "domain": [-100, 100] },
       "axis": {
-        "title": "Male Population (% left) | Female Population (% right)"
+        "title": "Male Population (% left) | Female Population (% right)",
+        "labelFontSize": 15,
+        "titleFontSize": 18  
       }
     },
     "color": {
@@ -65,7 +78,10 @@
       },
       "legend": {
         "title": "Gender",
-        "orient": "top"
+        "orient": "right",
+        "labelFontSize": 13, 
+        "titleFontSize": 15, 
+        "titleFontWeight": "bold"
       }
     },
     "tooltip": [

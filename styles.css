@@ -1,11 +1,60 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    font-family: Arial, sans-serif; /* Ensures consistent font usage */
+}
 
 .container {
-    width: 100%; /* Make sure the container takes full width */
-    display: flex; /* Enable Flexbox */
-    justify-content: space-around; /* Space between the two plots */
-    margin-bottom: 20px; /* Add some space between the containers if needed */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers all child elements */
+    margin: auto; /* Additional centering for the entire container */
+}
+
+.header {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 32px; /* Increases the size of the title */
+    font-family: 'Times New Roman', serif;
+    border-bottom: 2px solid black; /* Adds a bottom border */
+    padding-bottom: 10px;
+    width: 100%; /* Ensures the header spans the full width */
 }
 
 .plot {
-    width: 48%; /* Each plot will take up 48% of the width to sit side by side */
+    width: 80%; /* Adjusts width to provide a more centered look */
+    margin: 20px auto; /* Auto margins for horizontal centering */
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+.plot.vega-embed > div {
+    margin: auto; /* Centers non-flex children within flex containers */
+    width: 100%; /* Ensures visualization uses full width of its container */
+}
+
+.vega-embed canvas,
+.vega-embed svg {
+    display: block; /* Change display to block for proper centering */
+    margin: auto; /* Center block elements horizontally */
+}
+
+.heatmap-container {
+    width: 80%; /* Matches the width of other plots for consistency */
+    margin: auto; /* Ensures centering */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjusts spacing around heatmaps */
+}
+
+.heatmap-container .plot {
+    width: 48%; /* Two heatmaps side by side */
+    margin-bottom: 20px;
 }

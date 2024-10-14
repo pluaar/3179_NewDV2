@@ -1,8 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Arrivals by State in Malaysia (2020-2023)",
-  "width": 500,
-  "height": 300,
+  "title": {
+    "text": "Total Arrivals by State in Malaysia (2020-2023)",
+    "fontSize": 24,  
+    "font": "Arial",  
+    "color": "black",
+    "anchor": "middle"
+  },
+  "width": 700,
+  "height": 400,
   "projection": {
     "type": "equalEarth"
   },
@@ -79,8 +85,8 @@
       },
       "legend": {
         "title": "Arrivals (in Thousands)",
-        "labelFontSize": 12,
-        "titleFontSize": 10,
+        "labelFontSize": 14,  
+        "titleFontSize": 16,  
         "titleFontWeight": "bold"
       }
     },

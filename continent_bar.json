@@ -1,6 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Percentage of Arrivals by Continent for Each State in Malaysia (2020-2023)",
+  "title": {
+    "text": "Percentage of Arrivals by Continent for Each State in Malaysia (2020-2023)",
+    "fontSize": 20,  
+    "anchor": "middle",  
+    "color": "black",  
+    "font": "Arial"  
+  },
   "width": 600,
   "height": 400,
   "data": {
@@ -50,13 +56,21 @@
       "field": "soe",
       "type": "nominal",
       "title": "State",
-      "axis": {"labelAngle": 45, "labelFontSize": 10},
+      "axis": {
+        "labelAngle": 45,
+        "labelFontSize": 14,
+        "titleFontSize": 18  
+      },
       "sort": "-y"
     },
     "y": {
       "field": "percentage_arrivals",
       "type": "quantitative",
       "title": "Percentage of Arrivals",
+      "axis": {
+        "labelFontSize": 15,  
+        "titleFontSize": 18   
+      },
       "stack": "normalize"
     },
     "color": {
@@ -85,8 +99,8 @@
       },
       "legend": {
         "title": "Continent of Arrival",
-        "labelFontSize": 12,
-        "titleFontSize": 10,
+        "labelFontSize": 13,
+        "titleFontSize": 15,
         "titleFontWeight": "bold"
       }
     },
