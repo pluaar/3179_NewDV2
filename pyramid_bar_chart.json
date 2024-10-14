@@ -57,7 +57,7 @@
       "title": "Percentage of Arrivals",
       "scale": { "domain": [-100, 100] },
       "axis": {
-        "title": "Male Population (% left) | Female Population (% right)",
+        "title": "Male Population Arrivals (% left) | Female Population Arrivals (% right)",
         "labelFontSize": 15,
         "titleFontSize": 18  
       }
