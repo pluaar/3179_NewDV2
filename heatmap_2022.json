@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Monthly Arrivals for Each State in Year 2022",
+    "fontSize": 20,  
+    "anchor": "middle",  
+    "color": "black",  
+    "font": "Arial"  
+  },
+  "description": "Heatmap of Monthly Arrivals for Each State in 2022",
+  "data": {
+    "url": "https://raw.githubusercontent.com/pluaar/3179_DataVis2/refs/heads/main/monthly_arrivals_2022.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "calculate": "datum.arrivals / 1000",
+      "as": "Arrivals_in_Thousands"
+    },
+    {
+      "calculate": "parseInt(datum.month)",
+      "as": "MonthNumeric"
+    }
+  ],
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "MonthNumeric",
+      "type": "ordinal",
+      "title": "Month",
+      "sort": "ascending"
+    },
+    "y": {
+      "field": "soe",
+      "type": "nominal",
+      "title": "State of Entry"
+    },
+    "color": {
+      "field": "Arrivals_in_Thousands",
+      "type": "quantitative",
+      "title": "Arrivals (in Thousands)",
+      "bin": {
+        "maxbins": 15
+      },
+      "scale": {
+        "scheme": "reds"
+      },
+      "legend": {
+        "title": "Arrivals (Thousands)",
+        "format": ",.1f"
+      }
+    },
+    "tooltip": [
+      {"field": "soe", "type": "nominal", "title": "State of Entry"},
+      {"field": "MonthNumeric", "type": "ordinal", "title": "Month"},
+      {"field": "Arrivals_in_Thousands", "type": "quantitative", "title": "Arrivals (in Thousands)"}
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    }
+  }
+}
