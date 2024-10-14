@@ -48,7 +48,7 @@
         "maxbins": 20
       },
       "scale": {
-        "scheme": "yellowgreenblue"
+        "scheme": "yellowgreen"
       },
       "legend": {
         "title": "Arrivals (Thousands)",
