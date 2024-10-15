@@ -14,7 +14,7 @@
         "min": 2020,
         "max": 2023,
         "step": 1,
-        "name": "Year: "
+        "name": "Year Selection: "
       }
     },
     {
@@ -83,7 +83,7 @@
         },
         "tooltip": [
           {"field": "State", "type": "nominal", "title": "State"},
-          {"field": "Arrivals_in_Thousands", "type": "quantitative", "title": "Arrivals (in Thousands)"}
+          {"field": "Arrivals_in_Thousands", "type": "quantitative", "title": "Arrivals (in Thousands)", "format": ".2f"}
         ]
       }
     },
